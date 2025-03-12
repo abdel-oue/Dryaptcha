@@ -35,5 +35,5 @@
 - Ensure Node.js is installed before running the script.  
 - The script includes automatic retries if the CAPTCHA is incorrect.  
 
-Made with **Dryal**. 🚀  
+Made by **Dryal**. 🚀  
 
