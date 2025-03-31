@@ -26,8 +26,8 @@ async function loginDGI(retries = 0) {
         const page = await browser.newPage();
         await page.setViewport({ width: 1920, height: 1080 }); // Set screen size for consistency
 
-        // Go to DGI login page
-        await page.goto('https://enr.tax.gov.ma/enregistrement/login', { waitUntil: 'networkidle2' });
+        // Go to the login page
+        await page.goto('https://example.com/login', { waitUntil: 'networkidle2' });
 
         // Enter username and password in the respective fields
         await page.type('#j_username', USERNAME1);
@@ -89,4 +89,4 @@ async function loginDGI(retries = 0) {
 // Start the login process
 loginDGI();
 
-// Made by Dryal
+// Made by dryal

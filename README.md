@@ -28,12 +28,64 @@
     ```  
 3. Run the script:  
     ```bash
-    node script.js
+    node index.js
     ```  
+
+## Customizing the Script for a Different Website  
+If you want to use this script to automate login on a different website, follow these steps:
+
+1. **Change the Website URL:**
+   In the script, find the line that specifies the URL of the website:
+
+   ```javascript
+   await page.goto('https://example.com/login', { waitUntil: 'networkidle2' });
+   ```
+
+   Replace the URL 'https://example.com/login' with the login URL of the website you want to automate.
+
+2. **Update the CAPTCHA Image Selector:**
+   The script looks for a CAPTCHA image using this selector:
+   ```javascript
+   const captchaElement = await page.$('img[src="/enregistrement/captcha"]');
+   ```
+   Inspect the website and find the correct CSS selector for the CAPTCHA image. Update the selector to match the website you're automating. For example, if the CAPTCHA image has the ID 'captcha_image', you would change the selector like this:
+   ```javascript
+   const captchaElement = await page.$('#captcha_image');
+   ```
+3. **Update the CAPTCHA Input Field Selector:**
+   The script uses this selector to input the extracted CAPTCHA text:
+   ```javascript
+   await page.type('#captchalabel', captchaText);
+   ```
+   Replace '#captchalabel' with the correct selector for the CAPTCHA input field on your target website.
+4. **Update the Login Button Selector:**
+   The script clicks the login button using the following selector:
+   ```javascript
+   await page.click('button[name="btn_login"]');
+   ```
+   Inspect the website to find the appropriate selector for the login button and update it in the script. For example, if the login button has the class 'submit-btn', you would change it to:
+   ```javascript
+   await page.click('.submit-btn');
+   ```
+5. **Handling Error Messages:**
+   The script checks for an error message if the CAPTCHA is incorrect:
+   ```javascript
+   const errorMessage = await page.$('.error-message');
+   ```
+   Update the selector '.error-message' to match the error message element on the website you're automating.
+
 
 ## Notes:  
 - Ensure Node.js is installed before running the script.  
 - The script includes automatic retries if the CAPTCHA is incorrect.  
+- The CAPTCHA recognition is not 100% accurate. Some errors may occur depending on the complexity and quality of the CAPTCHA. It's important to verify the results.
 
-Made by **Dryal**. 🚀  
+## Disclaimer
 
+This script is **for educational purposes only**. It is intended to demonstrate web automation and CAPTCHA solving techniques using **Puppeteer** and **Tesseract.js**. By using this script, you agree to not use it for malicious activities or unauthorized access to websites.
+
+Please ensure you have **explicit permission** from the website owner or administrator before using this script on any website. **Misuse of this script may be illegal** depending on your jurisdiction.
+
+Use responsibly!
+
+Made by **Dryal**.
