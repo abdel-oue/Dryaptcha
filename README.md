@@ -1,6 +1,6 @@
 # Dryaptcha – Automated Login with CAPTCHA Solver  
 
-**Dryaptcha** is a lightweight and efficient script designed to automate login processes involving CAPTCHA challenges. It combines **Puppeteer** for web automation and **Tesseract.js** for Optical Character Recognition (OCR) to extract text from CAPTCHA images. The script handles everything — from entering credentials to solving CAPTCHAs and retrying if necessary — making the process seamless and fast.  
+**Dryaptcha** is a lightweight and efficient script designed to automate login processes involving CAPTCHA challenges. It combines **Puppeteer** for web automation and **Tesseract.js** for Optical Character Recognition (OCR) to extract text from CAPTCHA images.  
 
 ## Key Features:  
 - 🏗️ **Web Automation:** Uses Puppeteer to navigate websites and handle login forms.  
